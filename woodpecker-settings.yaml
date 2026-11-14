@@ -6,6 +6,7 @@ secrets:
     - tag
     - push
     - manual
+    - cron
     images: null
     value: |
       -----BEGIN AGE ENCRYPTED FILE-----
