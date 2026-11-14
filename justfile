@@ -2,6 +2,7 @@ mod rust '.just/rust.justfile'
 mod release '.just/release.justfile'
 mod just '.just/just.justfile'
 mod git '.just/git.justfile'
+mod tools '.just/tools.justfile'
 
 check:
     just just::fmt-check

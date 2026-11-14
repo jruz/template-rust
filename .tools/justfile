@@ -6,26 +6,34 @@ check:
     just --justfile .tools/justfile nushell-check
     just --justfile .tools/justfile woodpecker-check
     just --justfile .tools/justfile renovate-check
-    just --justfile .tools/justfile json-check
+    just --justfile .tools/justfile oxfmt-check
     just --justfile .tools/justfile toml-check
 
 fix:
     just --justfile .tools/justfile just-fmt-fix
     just --justfile .tools/justfile nix-fix
     just --justfile .tools/justfile nushell-fix
-    just --justfile .tools/justfile json-fix
+    just --justfile .tools/justfile oxfmt-fix
     just --justfile .tools/justfile toml-fix
 
 just-fmt-check:
-    just \
-        --justfile .tools/justfile \
+    fd \
+        --hidden \
+        --type file \
+        --glob '*justfile' \
+        --exec just \
+        --justfile {} \
         --unstable \
         --fmt \
         --check
 
 just-fmt-fix:
-    just \
-        --justfile .tools/justfile \
+    fd \
+        --hidden \
+        --type file \
+        --glob '*justfile' \
+        --exec just \
+        --justfile {} \
         --unstable \
         --fmt
 
@@ -63,19 +71,11 @@ woodpecker-check:
 renovate-check:
     renovate-config-validator --strict renovate.json
 
-json-check:
-    fd \
-        --hidden \
-        --extension json \
-        --extension jsonc \
-        --exec-batch oxfmt --check
+oxfmt-check:
+    oxfmt --check .
 
-json-fix:
-    fd \
-        --hidden \
-        --extension json \
-        --extension jsonc \
-        --exec-batch oxfmt --write
+oxfmt-fix:
+    oxfmt --write .
 
 toml-check:
     fd \

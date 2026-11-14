@@ -30,13 +30,12 @@
 - Run Cargo commands through `sandbox`.
 - Run `just check`, `just test`, and `slop-detector` after changes.
 
-## Template maintenance
+## Configuration tools
 
-- `.tools/` contains template-only configuration validators.
-- Run `nix develop ./.tools --command check` after configuration changes.
-- Run `nix develop ./.tools --command fix` to format configuration.
-- Delete `.tools/` and this section in generated projects.
-- `template.json` excludes these tools from downstream syncs.
+- Run `just tools::check` after configuration changes.
+- Run `just tools::fix` to format configuration.
+- `.tools/` provides its own Nix shell through `.just/tools.justfile`.
+- Keep these checks separate from `just check` and CI.
 
 ## Release
 

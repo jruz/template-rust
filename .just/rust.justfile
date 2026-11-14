@@ -20,14 +20,14 @@ check:
     just rust::architecture-check
 
 clippy-check *ARGS='':
-    sandbox cargo clippy --all-targets {{ARGS}}
+    sandbox cargo clippy --all-targets {{ ARGS }}
 
 clippy-fix *ARGS='':
     sandbox cargo clippy \
         --fix \
         --all-targets \
         --allow-dirty \
-        {{ARGS}}
+        {{ ARGS }}
 
 fix:
     just rust::fmt-fix
@@ -45,7 +45,7 @@ install:
         --locked \
         --force \
         --profile fast \
-        --target {{musl-target}} \
+        --target {{ musl-target }} \
         --root target/dist
     install \
         --directory \
@@ -63,13 +63,13 @@ outdated:
     sandbox cargo outdated
 
 run *ARGS='':
-    sandbox cargo build --target {{musl-target}}
-    target/docker/{{musl-target}}/debug/{{package-name}} {{ARGS}}
+    sandbox cargo build --target {{ musl-target }}
+    target/docker/{{ musl-target }}/debug/{{ package-name }} {{ ARGS }}
 
 test *FILTER='':
     sandbox cargo nextest run \
         --no-tests=pass \
-        {{FILTER}}
+        {{ FILTER }}
 
 upgrade:
     sandbox cargo upgrade --incompatible

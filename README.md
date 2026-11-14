@@ -13,12 +13,12 @@ A minimal Rust CLI template using Clap.
 
 Download the binary for your platform from [the latest release](https://github.com/jruz/template-rs/releases/latest):
 
-| Platform | Download |
-| --- | --- |
-| Linux x86_64 | [Download](https://github.com/jruz/template-rs/releases/latest/download/template-rs-unknown-linux-musl-x86_64) |
-| Linux ARM64 | [Download](https://github.com/jruz/template-rs/releases/latest/download/template-rs-unknown-linux-musl-aarch64) |
-| macOS Intel | [Download](https://github.com/jruz/template-rs/releases/latest/download/template-rs-apple-darwin-x86_64) |
-| macOS Apple Silicon | [Download](https://github.com/jruz/template-rs/releases/latest/download/template-rs-apple-darwin-aarch64) |
+| Platform            | Download                                                                                                        |
+| ------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Linux x86_64        | [Download](https://github.com/jruz/template-rs/releases/latest/download/template-rs-unknown-linux-musl-x86_64)  |
+| Linux ARM64         | [Download](https://github.com/jruz/template-rs/releases/latest/download/template-rs-unknown-linux-musl-aarch64) |
+| macOS Intel         | [Download](https://github.com/jruz/template-rs/releases/latest/download/template-rs-apple-darwin-x86_64)        |
+| macOS Apple Silicon | [Download](https://github.com/jruz/template-rs/releases/latest/download/template-rs-apple-darwin-aarch64)       |
 
 For example, on Linux x86_64:
 
